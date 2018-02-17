@@ -1,0 +1,16 @@
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+	if request.method == 'POST':
+		username = request.form['username']
+		password = request.form['password']
+		usernameAndPassword = [username, password]
+		
+		if username.rstrip() == '' or password.rstrip() == '':
+			error_message = 'Please enter a username and a password'
+			return render_template('hello.html', error_message=error_message)
+		else:
+			success_message = 'Welcome ' + username
+			return render_template('hello.html', success_message=success_message)
+
+	elif request.method == 'GET':
+		return render_template('hello.html')

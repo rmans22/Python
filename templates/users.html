@@ -1,0 +1,12 @@
+<html>
+<head>
+<titl>List All Users</titl>
+</head>
+<body>
+	<ul>
+	{% for data in result %}
+		<li><a href='edit/{{data[0]}}'>{{data[1]}}</a></li>
+	{% endfor %}
+	</ul>
+</body>
+</html>
